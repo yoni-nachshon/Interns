@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from 'src/app/register.service';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-register2',
@@ -7,13 +7,13 @@ import { RegisterService } from 'src/app/register.service';
   styleUrls: ['./register2.component.scss']
 })
 export class Register2Component implements OnInit {
-  name : any;
-  phone : any;
+  name;
+  phone;
   
 
   constructor(private registerService:RegisterService) {
-    this.name = this.registerService.Name;
-    this.phone = this.registerService.Phone;
+    this.name = this.registerService.name
+    this.phone = this.registerService.name
      
    }
 

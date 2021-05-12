@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from 'src/app/register.service';
+import { User } from 'src/app/models/userModel';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -7,22 +8,20 @@ import { RegisterService } from 'src/app/register.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  ID;
   name;
-  Passport;
-  Phone;
-  
- 
-
+  id;
+  passport;
+  phone;      
   constructor(private registerService:RegisterService) { }
-
+  
   ngOnInit(): void {
   }
   add(): void {
-    this.registerService.ID = this.ID;
-    this.registerService.Name = this.name;
-    this.registerService.Passport = this.Passport;
-    this.registerService.Phone = this.Phone;
+    this.registerService.name = this.name  
+    this.registerService.registerUser(this.name,this.id,this.passport,this.phone).subscribe((data:User)=>{
+      console.log(data);
+      
+    })
     
   }
   

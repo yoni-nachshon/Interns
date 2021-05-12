@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,6 +13,7 @@ import { AlreadyComponent } from './components/already/already.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { Register2Component } from './components/register2/register2.component';
+import { Register3Component } from './components/register3/register3.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +21,15 @@ import { Register2Component } from './components/register2/register2.component';
     AlreadyComponent,
     RegisterComponent,
     LoginComponent,
-    Register2Component
+    Register2Component,
+    Register3Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [],

@@ -10,7 +10,8 @@ import { User } from '../models/userModel';
 })
 export class RegisterService {
   baseURL = 'http://localhost:5000/';
-  name;
+  name = "Yoni";
+  password = 1234;
   
 
   constructor(private http:HttpClient) { }

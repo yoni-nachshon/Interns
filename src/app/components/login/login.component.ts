@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  name;
+  password;
+  wrong = false;
 
-  constructor() { }
+  constructor(private service:RegisterService,private router:Router) { }
 
   ngOnInit(): void {
+  }
+  login(){
+    if(this.name != this.service.name || this.password != this.service.password ){
+      this.wrong = true;
+    }
+    else{
+      this.name = this.service.name;
+      this.password = this.service.password;
+      this.router.navigate(["/profile"]);
+
+    }
   }
 
 }

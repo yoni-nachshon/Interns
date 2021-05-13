@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { Register2Component } from './components/register2/register2.component';
 import { Register3Component } from './components/register3/register3.component';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { Register3Component } from './components/register3/register3.component';
     RegisterComponent,
     LoginComponent,
     Register2Component,
-    Register3Component
+    Register3Component,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

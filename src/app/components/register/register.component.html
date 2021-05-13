@@ -9,25 +9,26 @@
 </div>
 <br>
 
-<div class="col-4">
-    <label class="form-label">Full name<input  type="text" class="form-control" placeholder="placeholder" [(ngModel)]="name"></label> 
+<div class="row my-3">
+<div class="col-3">
+    <label class="form-label">Full name<input  type="text" class="form-control" placeholder="Full name" [(ngModel)]="name" required></label> 
   </div>
-  <div class="col-4">
-    <label  class="form-label">ID number<input [(ngModel)]="id" class="form-control"  type="number" placeholder="placeholder"></label>   
+  <div class="col-3">
+    <label  class="form-label">ID number<input [(ngModel)]="id" class="form-control"  type="number" placeholder="ID number"></label>   
   </div>
-<div class="col-4">
-    <label class="form-label">Passport/Citizenship<input class="form-control" [(ngModel)]="passport" type="text" placeholder="placeholder"></label>
+<div class="col-3">
+    <label class="form-label">Passport/Citizenship<input class="form-control" [(ngModel)]="passport" type="text" placeholder="Passport/Citizenship"></label>
 </div>
-<div class="col-4">
-    <label class="form-label">Phone number<input class="form-control" [(ngModel)]="phone" type="tel" placeholder="placeholder"></label>
-</div>
-<div class="col-8"></div>
 
-        <br>
-        <div class="col-6">
-        <p>A verification code will by sent to you to this number</p>
-       
-        <button type="button" class="btn btn-success" type="submit" routerLink="/register2" (click)='add()'>CONTINUE</button>
+<div class="col-4">
+    <label class="form-label">Phone number<input class="form-control" [(ngModel)]="phone" type="tel" placeholder="Phone number">
+      <small>A verification code will by sent to you to this number</small>
+    </label> 
+   </div>
+</div>
+<div class="col-5">       
+    <button type="button" class="btn btn-secondary" type="submit" routerLink="/register2" (click)='add()'>CONTINUE</button>
+      </div>
     </div>
 </div>
     

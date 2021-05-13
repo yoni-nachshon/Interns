@@ -5,15 +5,17 @@
         <img src="assets/intern.jpg" alt="">
       </div>
       <div class="col-md-4">
-            <button (click)="intern()">Interns</button>
-            <button (click)="supervisor()">Supervisors</button>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary" (click)="intern()">Interns</button>
+          <button type="button" class="btn btn-outline-primary" (click)="supervisor()">Supervisors</button>
+        </div>
             <h3>WELCOME,{{name}}</h3> 
             <p>Lorem ipsum dolor sit amet.
             <br>
                consectetur adipisicing elit.Integer at
             <br>
                 pellentesque nisl.</p>
-            <button type="button" class="btn btn-success" routerLink="/register">REGISTER NOW</button>  
+            <button type="button" class="btn btn-secondary" routerLink="/register">REGISTER NOW</button>  
         </div>
       </div>
     </div>

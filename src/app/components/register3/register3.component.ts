@@ -11,5 +11,6 @@ export class Register3Component implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
 }

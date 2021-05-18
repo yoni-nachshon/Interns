@@ -12,6 +12,7 @@ export class RegisterService {
   baseURL = 'http://localhost:5000/';
   name = "Yoni";
   password = 1234;
+  phone = '';
   
 
   constructor(private http:HttpClient) { }

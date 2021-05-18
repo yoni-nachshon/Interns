@@ -7,29 +7,29 @@
 <br>
 <p>please fill in the following fildse to create an acounnt</p>
 </div>
-<br>
-
+</div>
 <div class="row my-3">
-<div class="col-3">
-    <label class="form-label">Full name<input  type="text" class="form-control" placeholder="Full name" [(ngModel)]="name" required></label> 
-  </div>
-  <div class="col-3">
-    <label  class="form-label">ID number<input [(ngModel)]="id" class="form-control"  type="number" placeholder="ID number"></label>   
-  </div>
-<div class="col-3">
-    <label class="form-label">Passport/Citizenship<input class="form-control" [(ngModel)]="passport" type="text" placeholder="Passport/Citizenship"></label>
-</div>
-
-<div class="col-4">
-    <label class="form-label">Phone number<input class="form-control" [(ngModel)]="phone" type="tel" placeholder="Phone number">
-      <small>A verification code will by sent to you to this number</small>
+    <label class="form-label col-4">
+      Full name
+      <input  type="text" class="form-control" placeholder="Full name" [(ngModel)]="name" required>
     </label> 
-   </div>
-</div>
-<div class="col-5">       
-    <button type="button" class="btn btn-secondary" type="submit" routerLink="/register2" (click)='add()'>CONTINUE</button>
-      </div>
-    </div>
+    <label  class="form-label col-4">
+      ID number
+      <input [(ngModel)]="id" class="form-control" type="text" placeholder="ID number" required>
+    </label>   
+    <label class="form-label col-4">
+      Passport/Citizenship
+      <input class="form-control" [(ngModel)]="passport" type="text" placeholder="Passport/Citizenship" required>
+    </label>
+  </div>
+  <div class="row my-3">
+    <label class="form-label col-4">
+      Phone number
+      <input class="form-control" [(ngModel)]="phone" type="tel" placeholder="Phone number" required>
+      <div><small>A verification code will by sent to you to this number</small></div>
+    </label>
+  </div>      
+    <button type="button"  class="btn btn-secondary" type="submit" routerLink="/register2" (click)='register()'>CONTINUE</button>
 </div>
     
 

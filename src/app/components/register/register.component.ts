@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   
   ngOnInit(): void {
   }
-  add(): void {
+  register(): void {
     this.registerService.name = this.name  
     this.registerService.registerUser(this.name,this.id,this.passport,this.phone).subscribe((data:User)=>{
       console.log(data);

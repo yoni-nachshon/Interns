@@ -5,18 +5,19 @@
     <h1>Hi {{name}}!</h1> <p> Please type the mobile verification
         <br> code you received</p>
 </div>
-    <input type="number" class="m-2" id="quantity" name="quantity" min="0" max="9">
-    <input type="number" class="m-2" id="quantity" name="quantity" min="0" max="9">   
-    <input type="number" class="m-2" id="quantity" name="quantity" min="0" max="9">
-    <input type="number" class="m-2" id="quantity" name="quantity" min="0" max="9">
+    <input type="text" class="m-2" [(ngModel)]="codeIn.one" required>
+    <input type="text" class="m-2" [(ngModel)]="codeIn.two" required>   
+    <input type="text" class="m-2" [(ngModel)]="codeIn.three" required>
+    <input type="text" class="m-2" [(ngModel)]="codeIn.four" required>
+    <div class="text-danger col-12"  *ngIf="wrong"><small>Wrong code please try again!</small></div>
 
 <div class="col-12">
     <br>
-    <p>I did not receive,<a href=""> resend</a></p>
+    <p>I did not receive,<a routerLink="/register2"> resend</a></p>
 </div>
 <div class="col-12">
     <br>
-    <button type="button" class="btn btn-secondary" routerLink="/register3">CONTINUE</button>
+    <button type="button" class="btn btn-secondary" (click)="register()">CONTINUE</button>
 </div>
   
 </div>

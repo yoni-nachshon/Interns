@@ -12,19 +12,19 @@ export class LoginComponent implements OnInit {
   password;
   wrong = false;
 
-  constructor(private service:RegisterService,private router:Router) { }
+  constructor(private service:RegisterService,private router:Router) {
+    this.name = this.service.name
+   }
 
   ngOnInit(): void {
   }
   login(){
-    if(this.name != this.service.name || this.password != this.service.password ){
+    if(this.password != this.service.password ){
       this.wrong = true;
     }
     else{
-      this.name = this.service.name;
       this.password = this.service.password;
       this.router.navigate(["/profile"]);
-
     }
   }
 

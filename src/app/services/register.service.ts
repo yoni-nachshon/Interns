@@ -10,7 +10,7 @@ import { User } from '../models/userModel';
 })
 export class RegisterService {
   baseURL = 'http://localhost:5000/';
-  name = "Yoni";
+  name;
   password = 1234;
   phone = '';
   

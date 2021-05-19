@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  name;
+  man;
 
   constructor() { }
 
   ngOnInit(): void {
   }
   intern(): void {
-    this.name = "Intern";
+    this.man = "Intern";
   }
   supervisor(): void {
-    this.name = "Supervisor";
+    this.man = "Supervisor";
   }
 
 }

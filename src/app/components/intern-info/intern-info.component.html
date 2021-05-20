@@ -1,1 +1,43 @@
-<p>intern-info works!</p>
+<app-icon></app-icon>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h6>Personal details</h6>
+<br>
+<p>Please tell as about yourself, personally</p>
+</div>
+</div>
+<form #f="ngForm">
+<div class="row my-3">
+    <label class="form-label col-4">
+      Age
+      <input  type="text" class="form-control" placeholder="Age" [(ngModel)]="age" name="ag" required #ag="ngModel">
+      <p class="text-danger" *ngIf="!ag.valid && ag.touched">The Age is required</p>
+    </label> 
+    <label  class="form-label col-4">
+      Country
+      <input [(ngModel)]="country" class="form-control" type="text" placeholder="Country" name="coun" required #coun="ngModel">
+      <p class="text-danger" *ngIf="!coun.valid && coun.touched">The Country is required</p>
+    </label>   
+    <label class="form-label col-4">
+      City
+      <input class="form-control" [(ngModel)]="city" type="text" placeholder="City" name="cit" required #cit="ngModel">
+      <p class="text-danger" *ngIf="!cit.valid && cit.touched">The City is required</p>
+    </label>
+  </div>
+  <div class="row my-3">
+    <label class="form-label col-4">
+      Granduation year
+      <input class="form-control" [(ngModel)]="year" type="tel" placeholder="Granduation year" name="gy" required #gy="ngModel">
+      <p class="text-danger" *ngIf="!gy.valid && gy.touched">The Granduation year is required</p>
+    </label>
+    <label class="form-label col-4">
+        Academic institution
+        <input class="form-control" [(ngModel)]="academic" type="tel" placeholder="Academic institution" name="ai" required #ai="ngModel">
+        <p class="text-danger" *ngIf="!ai.valid && ai.touched">The Academic institution is required</p>
+      </label>
+  </div>      
+    <button type="button" [disabled]="f.invalid"   class="btn btn-secondary" type="submit" routerLink="/" >NEXT</button>
+  </form> 
+  </div>

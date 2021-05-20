@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intern-info.component.scss']
 })
 export class InternInfoComponent implements OnInit {
+  age;
+  country;
+  city;
+  year;
+  academic;
 
   constructor() { }
 

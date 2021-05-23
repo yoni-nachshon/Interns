@@ -1,7 +1,10 @@
+import { WebcamImage } from "ngx-webcam";
+
 export interface User {
-    id:string,
+  id:string,
   name:string, 
   passport:string,
-  phone:number
+  phone:number,
+  img?:WebcamImage
 
 }

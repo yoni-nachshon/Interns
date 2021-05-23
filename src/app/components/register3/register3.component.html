@@ -6,6 +6,13 @@
    <p> You will automatically be taken to the next step as <br> soon as you take a picture</p>
 </div>
    <div class="col-md-4">
-    <img src="assets/Face ID.jpg" routerLink="/register-success">
+    <webcam [height]="350" [width]="350" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+<!-- Button Takes Photo -->
+<button type="button" class="btn btn-secondary" (click)="triggerSnapshot();" >Take A Snapshot</button>
+<!-- Snapshot Div where image will be shown -->
+<div class="snapshot" *ngIf="webcamImage">
+  <img [src]="webcamImage.imageAsDataUrl"/>
+  <button type="button" class="btn btn-secondary" routerLink="/register-success">Continue</button>
+</div>
    </div>
   

@@ -8,9 +8,11 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegisterSuccessComponent implements OnInit {
   name;
+  img;
 
   constructor(private service:RegisterService) {
     this.name = this.service.name;
+    this.img = this.service.img;
    }
 
   ngOnInit(): void {

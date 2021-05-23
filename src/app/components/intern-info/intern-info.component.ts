@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-intern-info',
@@ -12,9 +13,15 @@ export class InternInfoComponent implements OnInit {
   year;
   academic;
 
-  constructor() { }
+  constructor(private service:RegisterService) { }
 
   ngOnInit(): void {
+  }
+  add(){
+    this.service.updateUser(this.age,this.country,this.city,this.year,this.academic).subscribe(info =>{
+      console.log(info);
+      
+    })
   }
 
 }

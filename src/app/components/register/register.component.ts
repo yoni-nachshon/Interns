@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   register(): void {
     this.registerService.name = this.name  
     this.registerService.registerUser(this.name,this.id,this.passport,this.phone).subscribe((data:User)=>{
-      console.log(data);
+      console.log(data),this.registerService.user = data.id;
       
     })
     

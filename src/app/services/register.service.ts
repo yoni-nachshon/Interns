@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { User } from '../models/userModel';
 import { WebcamImage } from 'ngx-webcam';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +13,7 @@ export class RegisterService {
   password = 1234;
   phone = '';
   img;
+  user;
   
 
   constructor(private http:HttpClient) { }
@@ -23,6 +22,6 @@ export class RegisterService {
     return this.http.post(this.baseURL + "api/users/create",{id:id,name:name,passport:passport,phone:phone})
   }
   updateUser(age:number,country:string,city:string,year:number,academic:string):Observable<any> {
-    return this.http.put(this.baseURL + "api/users/",{age:age,country:country,year:year,academic:academic})
+    return this.http.put(this.baseURL + "api/users/" + this.user,{age:age,country:country,year:year,academic:academic})
   }
 }

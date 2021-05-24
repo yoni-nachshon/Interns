@@ -1,3 +1,4 @@
+<header><img *ngIf="img" [src]="img.imageAsDataUrl" height="50px"> {{name}}</header>
 <div class="container">
 <div class="row">
 <div class="col-12">
@@ -36,6 +37,13 @@
         <p class="text-danger" *ngIf="!ai.valid && ai.touched">The Academic institution is required</p>
       </label>
   </div>      
-    <button type="button" [disabled]="f.invalid"   class="btn btn-secondary" type="submit" routerLink="/" (click)="add()">NEXT</button>
-  </form> 
+    <button type="button" [disabled]="f.invalid"   class="btn btn-secondary" type="submit" routerLink="/intern-info2" (click)="add()">NEXT</button>
+  </form>
+  <footer>
+    <br><br><br>
+    <p> 0% Completed</p>
+    <div class="progress" style="height: 5px;">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+  </footer> 
   </div>

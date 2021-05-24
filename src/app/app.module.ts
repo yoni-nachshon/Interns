@@ -20,6 +20,8 @@ import { Register3Component } from './components/register3/register3.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterSuccessComponent } from './components/register-success/register-success.component';
 import { InternInfoComponent } from './components/intern-info/intern-info.component';
+import { InternInfo2Component } from './components/intern-info2/intern-info2.component';
+import { RegisterDoneComponent } from './components/register-done/register-done.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,9 @@ import { InternInfoComponent } from './components/intern-info/intern-info.compon
     Register3Component,
     ProfileComponent,
     RegisterSuccessComponent,
-    InternInfoComponent
+    InternInfoComponent,
+    InternInfo2Component,
+    RegisterDoneComponent
   ],
   imports: [
     BrowserModule,

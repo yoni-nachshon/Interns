@@ -10,28 +10,47 @@ import { code } from './code.class';
 })
 export class RegisterService {
   baseURL = 'http://localhost:5000/';
-  name;
   password = 1234;
-  phone;
-  img;
-  user;
   code = new code();
+
+  user : User = {
+    id : "",
+    name: "",
+    passport: "",
+    phone: null,
+    img: null,
+    age: null,
+    country: "",
+    city: "",
+    graduationYear: null,
+    academicInstitution: "",
+    medicalInstitution: "",
+    residancy: "",
+    department: "",
+    residancyYear: null,
+    practices : [],
+    tests : [],
+  }
 
 
 
   constructor(private http: HttpClient) {
+    console.log(this.user);
+    
+    
+    
     this.code.start();
    }
 
-  registerUser(name: string, id: string, passport: string, phone: string): Observable<any> {
-    return this.http.post(this.baseURL + "api/users/create", { id: id, name: name, passport: passport, phone: phone })
+  registerUser(): Observable<Object> {
+    return this.http.post(this.baseURL + "api/users/create",this.user)
   }
-  updateUser(age: number, country: string, city: string, year: number, academic: string): Observable<any> {
-    return this.http.put(this.baseURL + "api/users/" + this.user, { age: age, country: country, year: year, academic: academic })
+  updateUser(): Observable<Object> {
+    return this.http.put(this.baseURL + "api/users/update", this.user)
   }
   sendSms(): Observable<Object> {
     return this.http.post(this.baseURL + "api/users/sendSms",
-      { from: 'Intern Academy', to: this.phone, text: `Hello ${this.name}, your code is: ${this.code.toString()}` }
+      { from: 'Intern Academy', to: this.user.phone, text: `Hello ${this.user.name}, your code is: ${this.code.toString()}` }
     );
   }
 

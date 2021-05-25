@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/userModel';
 import { code } from 'src/app/services/code.class';
 import { RegisterService } from 'src/app/services/register.service';
 
@@ -9,20 +10,19 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register2.component.scss']
 })
 export class Register2Component implements OnInit {
-  name;
-  phone;
-  //code = 1234;
+ 
   code = new code();
   wrong = false;
+  name;
   
 
   constructor(private service:RegisterService,private router:Router) {
+    this.name = this.service.user.name;
     
   }
   
   ngOnInit(): void {
-    this.name = this.service.name
-    this.phone = this.service.phone       
+            
   }
   register(): void {
     

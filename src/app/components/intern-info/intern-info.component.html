@@ -1,4 +1,5 @@
 <header><img *ngIf="img" [src]="img.imageAsDataUrl" height="50px"> {{name}}</header>
+<br><br><br><br><br><br><br>
 <div class="container">
 <div class="row">
 <div class="col-12">
@@ -11,29 +12,29 @@
 <div class="row my-3">
     <label class="form-label col-4">
       Age
-      <input  type="text" class="form-control" placeholder="Age" [(ngModel)]="age" name="ag" required #ag="ngModel">
+      <input  type="text" class="form-control" placeholder="Age" [(ngModel)]="user.age" name="ag" required #ag="ngModel">
       <p class="text-danger" *ngIf="!ag.valid && ag.touched">The Age is required</p>
     </label> 
     <label  class="form-label col-4">
       Country
-      <input [(ngModel)]="country" class="form-control" type="text" placeholder="Country" name="coun" required #coun="ngModel">
+      <input [(ngModel)]="user.country" class="form-control" type="text" placeholder="Country" name="coun" required #coun="ngModel">
       <p class="text-danger" *ngIf="!coun.valid && coun.touched">The Country is required</p>
     </label>   
     <label class="form-label col-4">
       City
-      <input class="form-control" [(ngModel)]="city" type="text" placeholder="City" name="cit" required #cit="ngModel">
+      <input class="form-control" [(ngModel)]="user.city" type="text" placeholder="City" name="cit" required #cit="ngModel">
       <p class="text-danger" *ngIf="!cit.valid && cit.touched">The City is required</p>
     </label>
   </div>
   <div class="row my-3">
     <label class="form-label col-4">
       Granduation year
-      <input class="form-control" [(ngModel)]="year" type="tel" placeholder="Granduation year" name="gy" required #gy="ngModel">
+      <input class="form-control" [(ngModel)]="user.graduationYear" type="tel" placeholder="Granduation year" name="gy" required #gy="ngModel">
       <p class="text-danger" *ngIf="!gy.valid && gy.touched">The Granduation year is required</p>
     </label>
     <label class="form-label col-4">
         Academic institution
-        <input class="form-control" [(ngModel)]="academic" type="tel" placeholder="Academic institution" name="ai" required #ai="ngModel">
+        <input class="form-control" [(ngModel)]="user.academicInstitution" type="tel" placeholder="Academic institution" name="ai" required #ai="ngModel">
         <p class="text-danger" *ngIf="!ai.valid && ai.touched">The Academic institution is required</p>
       </label>
   </div>      

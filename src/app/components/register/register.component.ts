@@ -10,26 +10,26 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  name;
-  id;
-  passport;
-  phone;      
-  constructor(private registerService:RegisterService) { }
+
+  user : User;
+ 
+  constructor(private service:RegisterService) {
+    this.user = this.service.user;
+   }
   
   ngOnInit(): void {
-    console.log(this.registerService.code.toString());
+    console.log(this.service.code.toString());
     
   }
   register(): void {
-    this.registerService.name = this.name;
-    this.registerService.phone = this.phone;
 
-    this.registerService.sendSms().subscribe(()=>{}); 
+    this.service.user = this.user;
+    
+    this.service.sendSms().subscribe(()=>{}); 
 
-    this.registerService.registerUser(this.name,this.id,this.passport,this.phone).subscribe((data:User)=>{
-      console.log(data),this.registerService.user = data.id;
-      
-    })
+    // this.service.registerUser(this.user).subscribe((data:User)=>{
+    //   console.log(data),this.service.user.id = data.id;  
+    // })
     
   }
   

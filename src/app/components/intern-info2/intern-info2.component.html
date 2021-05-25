@@ -1,4 +1,5 @@
 <header><img *ngIf="img" [src]="img.imageAsDataUrl" height="50px"> {{name}}</header>
+<br><br><br><br><br><br><br>
 <div class="container">
     <div class="row">
     <div class="col-12">
@@ -11,26 +12,26 @@
     <div class="row my-3">
         <label class="form-label col-4">
           Medical institution
-          <input  type="text" class="form-control" placeholder="Medical institution" [(ngModel)]="medical">
+          <input  type="text" class="form-control" placeholder="Medical institution" [(ngModel)]="user.medicalInstitution">
         </label> 
         <label  class="form-label col-4">
           Residency
-          <input [(ngModel)]="residency" class="form-control" type="text" placeholder="Residency">
+          <input [(ngModel)]="user.residancy" class="form-control" type="text" placeholder="Residency">
         </label>   
         <label class="form-label col-4">
           Department
-          <input class="form-control" [(ngModel)]="department" type="text" placeholder="Department">
+          <input class="form-control" [(ngModel)]="user.department" type="text" placeholder="Department">
         </label>
       </div>
       <div class="row my-3">
         <div class="col-4">
             <label>Year in residency</label>
-          <input [(ngModel)]="yearInRes" type="range" class="form-control" placeholder="Year in residency">
+          <input [(ngModel)]="user.residancyYear" type="range" class="form-control" placeholder="Year in residency">
         </div>
           
          
       </div>      
-        <button type="button" [disabled]="fo.invalid"   class="btn btn-secondary" type="submit" routerLink="/register-done">DONE!</button>
+        <button type="button" [disabled]="fo.invalid"   class="btn btn-secondary" type="submit" (click)="done()">DONE!</button>
       </form> 
       <footer>
         <br><br><br>

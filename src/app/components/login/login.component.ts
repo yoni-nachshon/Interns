@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   wrong = false;
 
   constructor(private service:RegisterService,private router:Router) {
-    this.name = this.service.name
+    this.name = this.service.user.name;
    }
 
   ngOnInit(): void {

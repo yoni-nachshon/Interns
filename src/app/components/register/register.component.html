@@ -12,24 +12,24 @@
 <div class="row my-3">
     <label class="form-label col-4">
       Full name
-      <input  type="text" class="form-control" placeholder="Full name" [(ngModel)]="name" name="name" required #fn="ngModel">
+      <input  type="text" class="form-control" placeholder="Full name" [(ngModel)]="user.name" name="name" required #fn="ngModel">
       <p class="text-danger" *ngIf="!fn.valid && fn.touched">The name is required</p>
     </label> 
     <label  class="form-label col-4">
       ID number
-      <input [(ngModel)]="id" class="form-control" type="text" placeholder="ID number" name="idn" required #idn="ngModel">
+      <input [(ngModel)]="user.id" class="form-control" type="text" placeholder="ID number" name="idn" required #idn="ngModel">
       <p class="text-danger" *ngIf="!idn.valid && idn.touched">The ID is required</p>
     </label>   
     <label class="form-label col-4">
       Passport/Citizenship
-      <input class="form-control" [(ngModel)]="passport" type="text" placeholder="Passport/Citizenship" name="pass" required #pass="ngModel">
+      <input class="form-control" [(ngModel)]="user.passport" type="text" placeholder="Passport/Citizenship" name="pass" required #pass="ngModel">
       <p class="text-danger" *ngIf="!pass.valid && pass.touched">The password is required</p>
     </label>
   </div>
   <div class="row my-3">
     <label class="form-label col-4">
       Phone number
-      <input class="form-control" [(ngModel)]="phone" type="tel" placeholder="Phone number" name="pn" required #pn="ngModel">
+      <input class="form-control" [(ngModel)]="user.phone" type="tel" placeholder="Phone number" name="pn" required #pn="ngModel">
       <p class="text-danger" *ngIf="!pn.valid && pn.touched">The phone is required</p>
       <div><small>A verification code will by sent to you to this number</small></div>
     </label>

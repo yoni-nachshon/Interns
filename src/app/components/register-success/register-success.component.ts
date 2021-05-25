@@ -7,12 +7,14 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register-success.component.scss']
 })
 export class RegisterSuccessComponent implements OnInit {
-  name;
   img;
+  name;
+  
 
   constructor(private service:RegisterService) {
-    this.name = this.service.name;
-    this.img = this.service.img;
+    this.img = service.user.img;
+    this.name = service.user.name;
+    
    }
 
   ngOnInit(): void {

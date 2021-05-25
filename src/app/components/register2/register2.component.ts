@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { code } from 'src/app/services/code.class';
 import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
@@ -10,26 +11,30 @@ import { RegisterService } from 'src/app/services/register.service';
 export class Register2Component implements OnInit {
   name;
   phone;
-  code = 1234;
-  codeIn = {one:null,two:null,three:null,four:null};
+  //code = 1234;
+  code = new code();
   wrong = false;
   
 
-  constructor(private registerService:RegisterService,private router:Router) {
+  constructor(private service:RegisterService,private router:Router) {
     
   }
   
   ngOnInit(): void {
-    this.name = this.registerService.name
-    this.phone = this.registerService.phone       
+    this.name = this.service.name
+    this.phone = this.service.phone       
   }
   register(): void {
-    if(this.codeIn.one + this.codeIn.two + this.codeIn.three + this.codeIn.four == this.code){
+    
+    if(this.code.toString() == this.service.code.toString()){
       this.router.navigate(["/register3"]); 
     }
     else{
       this.wrong = true;
     }
+  }
+  resend(){
+    this.service.sendSms().subscribe(()=>{});
   }
 
 }

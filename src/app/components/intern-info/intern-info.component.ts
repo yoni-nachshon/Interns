@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/userModel';
 import { RegisterService } from 'src/app/services/register.service';
 
@@ -13,7 +14,7 @@ export class InternInfoComponent implements OnInit {
 
   user:User;
 
-  constructor(private service:RegisterService) { 
+  constructor(private service:RegisterService,private router:Router) { 
     this.name = this.service.user.name;
     this.img = this.service.user.img;
   }
@@ -22,6 +23,7 @@ export class InternInfoComponent implements OnInit {
   }
   add(){
     this.service.user = this.user;
+    this.router.navigate(['/intern-info2'])
   }
 
 }

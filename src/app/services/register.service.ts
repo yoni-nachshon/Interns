@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from '../models/userModel';
 import { WebcamImage } from 'ngx-webcam';
 import { code } from './code.class';
@@ -36,10 +36,9 @@ export class RegisterService {
 
   constructor(private http: HttpClient) {
     console.log(this.user);
-    
-    
-    
-    this.code.start();
+
+
+  
    }
 
   registerUser(): Observable<Object> {
@@ -49,9 +48,13 @@ export class RegisterService {
     return this.http.put(this.baseURL + "api/users/update", this.user)
   }
   sendSms(): Observable<Object> {
+   
     return this.http.post(this.baseURL + "api/users/sendSms",
-      { from: 'Intern Academy', to: this.user.phone, text: `Hello ${this.user.name}, your code is: ${this.code.toString()}` }
+      { from: 'Intern App', to: this.user.phone, text: `Hello ${this.user.name}` }
     );
+  }
+  sendCode(code: string):Observable<boolean>{
+    return this.http.post<boolean>(this.baseURL+'api/users/iscodecomper',{code:code});
   }
 
   

@@ -10,31 +10,28 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register2.component.scss']
 })
 export class Register2Component implements OnInit {
- 
+
   code = new code();
   wrong = false;
-  name;
-  
+  name : string;
 
-  constructor(private service:RegisterService,private router:Router) {
+
+  constructor(private service: RegisterService, private router: Router) {
     this.name = this.service.user.name;
-    
+
   }
-  
+
   ngOnInit(): void {
-            
+
   }
   register(): void {
     
-    if(this.code.toString() == this.service.code.toString()){
-      this.router.navigate(["/register3"]); 
-    }
-    else{
-      this.wrong = true;
-    }
+
+    this.service.sendCode(this.code.toString()).subscribe(
+      res => this.router.navigate(["/register3"]),
+      err => this.wrong = true
+    );
   }
-  resend(){
-    this.service.sendSms().subscribe(()=>{});
-  }
+
 
 }

@@ -8,14 +8,14 @@ import { RegisterService } from 'src/app/services/register.service';
   templateUrl: './intern-info2.component.html',
   styleUrls: ['./intern-info2.component.scss']
 })
-export class InternInfo2Component implements OnInit {
+export class InternInfo2Component implements OnInit { 
+   
   name;
   img;
 
-  error = false;
+  err = false;
 
   user:User;
-
 
   constructor(private service:RegisterService,private router:Router) {
     this.name = this.service.user.name;
@@ -45,9 +45,11 @@ export class InternInfo2Component implements OnInit {
       }
     },
     error =>{
-     this.error = true;
+     this.err = true;
     })
   }
+ 
+  
 }
   
 

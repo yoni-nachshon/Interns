@@ -8,7 +8,7 @@
     <p>Please tell as about yourself, Professionally</p>
     </div>
     </div>
-    <form #fo="ngForm">
+    <form>
     <div class="row my-3">
         <label class="form-label col-4">
           Medical institution
@@ -26,12 +26,10 @@
       <div class="row my-3">
         <div class="col-4">
             <label>Year in residency</label>
-          <input [(ngModel)]="user.residancyYear" type="range" class="form-control" placeholder="Year in residency">
-        </div>
-          
-         
+              <input type="range" class="form-control" [(ngModel)]="user.residancyYear" min="0" max="5">                                          
+        </div>     
       </div>      
-        <button type="button" [disabled]="fo.invalid"   class="btn btn-secondary" type="submit" (click)="done()">DONE!</button>
+        <button type="button"    class="btn btn-secondary" type="submit" (click)="done()">DONE!</button>
       </form> 
       <footer>
         <br><br><br>

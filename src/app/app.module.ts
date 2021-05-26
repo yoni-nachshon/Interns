@@ -3,10 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {WebcamModule} from 'ngx-webcam';
-
-
-
-
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +19,8 @@ import { RegisterSuccessComponent } from './components/register-success/register
 import { InternInfoComponent } from './components/intern-info/intern-info.component';
 import { InternInfo2Component } from './components/intern-info2/intern-info2.component';
 import { RegisterDoneComponent } from './components/register-done/register-done.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +34,8 @@ import { RegisterDoneComponent } from './components/register-done/register-done.
     RegisterSuccessComponent,
     InternInfoComponent,
     InternInfo2Component,
-    RegisterDoneComponent
+    RegisterDoneComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,10 +43,9 @@ import { RegisterDoneComponent } from './components/register-done/register-done.
     NgbModule,
     FormsModule,
     HttpClientModule,
-    WebcamModule
-  
-   
-    
+    WebcamModule,
+    BrowserAnimationsModule,
+    MatSliderModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

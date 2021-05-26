@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit {
    }
   
   ngOnInit(): void {
-    console.log(this.service.code.toString());
     
   }
   register(): void {

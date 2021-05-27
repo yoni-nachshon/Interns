@@ -1,5 +1,5 @@
-<header><img *ngIf="img" [src]="img.imageAsDataUrl" height="50px"> {{name}}</header>
-<br><br><br><br><br><br><br>
+<header><img *ngIf="user.img" [src]="user.img.imageAsDataUrl" height="50px"> {{user.name}}</header>
+<br><br><br>
 <div class="container">
 <div class="row">
 <div class="col-12">
@@ -8,7 +8,7 @@
 <p>Please tell as about yourself, personally</p>
 </div>
 </div>
-<form #f="ngForm">
+<!-- <form #f="ngForm"> -->
 <div class="row my-3">
     <label class="form-label col-4">
       Age
@@ -38,8 +38,8 @@
         <p class="text-danger" *ngIf="!ai.valid && ai.touched">The Academic institution is required</p>
       </label>
   </div>      
-    <button type="button" [disabled]="f.invalid"   class="btn btn-secondary" type="submit" (click)="add()">NEXT</button>
-  </form>
+    <button type="button"    class="btn btn-secondary" type="submit" (click)="add()">NEXT</button>
+  <!-- </form> -->
   <footer>
     <br><br><br>
     <p> 0% Completed</p>

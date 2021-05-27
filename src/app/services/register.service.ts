@@ -14,28 +14,25 @@ export class RegisterService {
   code = new code();
 
   user : User = {
-    id : "",
     name: "",
+    id : "",
     passport: "",
     phone: null,
     img: null,
     age: null,
     country: "",
     city: "",
-    graduationYear: null,
     academicInstitution: "",
+    graduationYear: null,
     medicalInstitution: "",
     residancy: "",
     department: "",
-    residancyYear: null,
-    practices : [],
-    tests : [],
+    residancyYear: null 
   }
 
 
 
   constructor(private http: HttpClient) {
-    console.log(this.user);
 
 
   

@@ -1,5 +1,5 @@
-<header><img *ngIf="img" [src]="img.imageAsDataUrl" height="50px"> {{name}}</header>
-<br><br><br><br><br><br><br>
+<header><img *ngIf="user.img" [src]="user.img.imageAsDataUrl" height="50px"> {{user.name}}</header>
+<br><br><br>
 <div class="container">
     <div class="row">
     <div class="col-12">
@@ -8,7 +8,7 @@
     <p>Please tell as about yourself, Professionally</p>
     </div>
     </div>
-    <form>
+    <!-- <form> -->
     <div class="row my-3">
         <label class="form-label col-4">
           Medical institution
@@ -23,14 +23,14 @@
           <input class="form-control" [(ngModel)]="user.department" type="text" placeholder="Department">
         </label>
       </div>
-      <div class="row my-3">
-        <div class="col-4">
-            <label>Year in residency</label>
-              <input type="range" class="form-control" [(ngModel)]="user.residancyYear" min="0" max="5">                                          
-        </div>     
-      </div>      
-        <button type="button"    class="btn btn-secondary" type="submit" (click)="done()">DONE!</button>
-      </form> 
+      <div class="row">
+            <label class="col-md-2 form-lebel">Year in residency <br><br><input type="range" class="form-range"
+               [(ngModel)]="user.residancyYear" value="3" min="0" max="5" oninput="num.value=this.value">
+               &nbsp;<span><output id="num">3</output></span>
+              </label>                                                                           
+              </div>      
+        <button type="button"    class="btn btn-secondary" type="submit" (click)="done()" routerLink="/register-done" >DONE!</button>
+      <!-- </form>  -->
       <footer>
         <br><br><br>
         <p> 65% Completed</p>

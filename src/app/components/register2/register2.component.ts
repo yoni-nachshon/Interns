@@ -24,13 +24,29 @@ export class Register2Component implements OnInit {
   ngOnInit(): void {
 
   }
-  register(): void {
-    
-
+  register(): void {   
     this.service.sendCode(this.code.toString()).subscribe(
       res => this.router.navigate(["/register3"]),
       err => this.wrong = true
     );
+  }
+  onDigitInput(event){
+
+    let element;
+    if(event.code !== 'Backspace'){
+      element = event.srcElement.nextElementSibling;
+    }
+    if(event.code == 'Backspace'){
+      element = event.srcElement.previousElementSibling;
+    }
+    if(element == null){
+      return;
+    }
+    else{
+      element.focus();
+    }
+        
+    
   }
 
 

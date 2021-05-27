@@ -9,14 +9,15 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./intern-info.component.scss']
 })
 export class InternInfoComponent implements OnInit {
-  name;
-  img;
+  // name;
+  // img;
 
   user:User;
 
-  constructor(private service:RegisterService,private router:Router) { 
-    this.name = this.service.user.name;
-    this.img = this.service.user.img;
+  constructor(private service:RegisterService,private router:Router) {
+    this.user = this.service.user; 
+    // this.name = this.service.user.name;
+    // this.img = this.service.user.img;
   }
 
   ngOnInit(): void {

@@ -5,10 +5,10 @@
     <h1>Hi {{name}}!</h1> <p> Please type the mobile verification
         <br> code you received</p>
 </div>
-    <input type="text" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.one" required autofocus>
-    <input type="text" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.two" required>   
-    <input type="text" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.three" required>
-    <input type="text" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.four" required>
+    <input type="number" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.one" required autofocus>
+    <input type="number" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.two" required>   
+    <input type="number" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.three" required>
+    <input type="number" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.four" required>
     <div class="text-danger col-12"  *ngIf="wrong"><small>Wrong code please try again!</small></div>
 
 <div class="col-12">

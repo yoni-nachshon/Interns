@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/userModel';
 import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
@@ -7,12 +8,12 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register-done.component.scss']
 })
 export class RegisterDoneComponent implements OnInit {
-  name;
-  img;
+ 
+  user:User;
 
   constructor(private service:RegisterService) {
-    this.name = this.service.user.name;
-    this.img = this.service.user.img;
+    this.user = this.service.user;
+    
    }
 
   ngOnInit(): void {

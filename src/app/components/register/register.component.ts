@@ -26,10 +26,6 @@ export class RegisterComponent implements OnInit {
     
     this.service.sendSms().subscribe(()=>{}); 
 
-    // this.service.registerUser(this.user).subscribe((data:User)=>{
-    //   console.log(data),this.service.user.id = data.id;  
-    // })
-    
   }
   
 

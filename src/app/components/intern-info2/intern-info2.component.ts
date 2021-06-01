@@ -23,6 +23,7 @@ export class InternInfo2Component implements OnInit {
       console.log(data);  
     })
   }
+  
  
   
 }

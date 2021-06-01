@@ -30,6 +30,8 @@ export class Register2Component implements OnInit {
       err => this.wrong = true
     );
   }
+  resend(): void {this.service.sendSms().subscribe(()=>{});}
+
   onDigitInput(event){
 
     let element;

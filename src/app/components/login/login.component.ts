@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/userModel';
 import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
@@ -9,23 +10,27 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class LoginComponent implements OnInit {
   name;
-  password;
+  phone;
   wrong = false;
 
   constructor(private service:RegisterService,private router:Router) {
-    this.name = this.service.user.name;
    }
 
   ngOnInit(): void {
   }
   login(){
-    if(this.password != this.service.password ){
-      this.wrong = true;
-    }
-    else{
-      this.password = this.service.password;
-      this.router.navigate(["/profile"]);
-    }
+    this.service.user.phone = this.phone;
+    this.service.user.name = this.name;
+    this.service.sendSms(true).subscribe(()=>{
+      this.router.navigate(["/register2"]);
+    });
+    // if(this.name == this.service.user.name && this.phone == this.service.user.phone){
+      
+    //   this.router.navigate(["/register2"]);
+    // }
+    // else {
+    //   this.wrong = true;
+    // }
   }
 
 }

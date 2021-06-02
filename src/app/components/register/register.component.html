@@ -33,6 +33,11 @@
       <p class="text-danger" *ngIf="!pn.valid && pn.touched">The phone is required</p>
       <div><small>A verification code will by sent to you to this number</small></div>
     </label>
+    <label class="form-label col-4">
+      Password
+      <input class="form-control" [(ngModel)]="user.password" type="tel" placeholder="Password" name="pwd" required #pwd="ngModel">
+      <p class="text-danger" *ngIf="!pwd.valid && pwd.touched">The password is required</p> 
+    </label>
   </div>      
     <button type="button" [disabled]="form.invalid"   class="btn btn-secondary" type="submit" routerLink="/register2" (click)='register()'>CONTINUE</button>
   </form> 

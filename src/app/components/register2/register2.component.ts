@@ -13,11 +13,11 @@ export class Register2Component implements OnInit {
 
   code = new code();
   wrong = false;
-  name : string;
+  user:User
 
 
   constructor(private service: RegisterService, private router: Router) {
-    this.name = this.service.user.name;
+    this.user = this.service.user;
 
   }
 
@@ -26,7 +26,18 @@ export class Register2Component implements OnInit {
   }
   register(): void {   
     this.service.sendCode(this.code.toString()).subscribe(
-      res => this.router.navigate(["/register3"]),
+      res => {
+        // if login go to profile
+        if(res && res.user) {
+          this.user = res.user;
+          this.user.token = res.token;
+          console.log(this.user.token);
+           // save in local storage if you want to
+          this.router.navigate(["/profile"]);
+        } else{
+          this.router.navigate(["/register3"])
+        }
+      },
       err => this.wrong = true
     );
   }

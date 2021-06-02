@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-    <h1>Hi {{name}}!</h1> <p> Please type the mobile verification
+    <h1>Hi {{user.name}}!</h1> <p> Please type the mobile verification
         <br> code you received</p>
 </div>
     <input type="number" (keyup)="onDigitInput($event)" class="m-2" [(ngModel)]="code.one" required autofocus>

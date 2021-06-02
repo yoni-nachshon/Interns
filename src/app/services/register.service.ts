@@ -18,6 +18,7 @@ export class RegisterService {
     id : "",
     passport: "",
     phone: null,
+    password:null,
     img: null,
     age: null,
     country: "",
@@ -44,14 +45,14 @@ export class RegisterService {
   updateUser(): Observable<Object> {
     return this.http.put(this.baseURL + "api/users/update", this.user)
   }
-  sendSms(): Observable<Object> {
+  sendSms(isExists?: boolean): Observable<Object> {
    
     return this.http.post(this.baseURL + "api/users/sendSms",
-      { from: 'Intern App', to: this.user.phone, text: `Hello ${this.user.name}` }
+      { from: 'Intern App', to: this.user.phone, text: `Hello ${this.user.name}`, loginMode: isExists, name: this.user.name, phone: this.user.phone }
     );
   }
-  sendCode(code: string):Observable<boolean>{
-    return this.http.post<boolean>(this.baseURL+'api/users/iscodecomper',{code:code});
+  sendCode(code: string):Observable<any>{
+    return this.http.post<any>(this.baseURL+'api/users/iscodecomper',{code:code, phone: this.user.phone});
   }
 
   

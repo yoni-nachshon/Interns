@@ -22,6 +22,7 @@ import { InternInfo2Component } from './components/intern-info2/intern-info2.com
 import { RegisterDoneComponent } from './components/register-done/register-done.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HeaderComponent } from './components/header/header.component';
     InternInfo2Component,
     RegisterDoneComponent,
     HeaderComponent,
+    ListComponent,
     
   ],
   imports: [

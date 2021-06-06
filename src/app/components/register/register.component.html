@@ -35,7 +35,7 @@
     </label>
     <label class="form-label col-4">
       Password
-      <input class="form-control" [(ngModel)]="user.password" type="tel" placeholder="Password" name="pwd" required #pwd="ngModel">
+      <input class="form-control" [(ngModel)]="user.password" type="password" placeholder="Password" name="pwd" required #pwd="ngModel">
       <p class="text-danger" *ngIf="!pwd.valid && pwd.touched">The password is required</p> 
     </label>
   </div>      

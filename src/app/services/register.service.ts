@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { User } from '../models/userModel';
 import { WebcamImage } from 'ngx-webcam';
 import { code } from './code.class';
@@ -28,23 +29,36 @@ export class RegisterService {
     medicalInstitution: "",
     residancy: "",
     department: "",
-    residancyYear: null 
+    residancyYear: null,
+    roleNumber:10 
   }
 
 
 
-  constructor(private http: HttpClient) {
-
-
-  
+  constructor(private http: HttpClient) {  
    }
 
-  registerUser(): Observable<Object> {
-    return this.http.post(this.baseURL + "api/users/create",this.user)
+  registerUser(): Observable<User> {
+    return this.http.post<User>(this.baseURL + "api/users/create",this.user)
+    .pipe(tap(res=>{localStorage.setItem('token',JSON.stringify(res.token))}))
   }
   updateUser(): Observable<Object> {
     return this.http.put(this.baseURL + "api/users/update", this.user)
   }
+  getWithToken<T>(path: String, headers?: object): Observable<T> {
+    return this.http.get<T>(this.baseURL + path, this.getOptions(headers))
+    
+    
+  }
+  getOptions(headers?: any) {
+    headers = headers? headers : {};
+    headers['content-type'] = 'application/json';
+    headers['x-access-token'] = JSON.parse(localStorage.getItem('token'));
+    return {
+      headers: new HttpHeaders(headers)
+    }
+  }
+ 
   sendSms(isExists?: boolean): Observable<Object> {
    
     return this.http.post(this.baseURL + "api/users/sendSms",

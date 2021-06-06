@@ -6,15 +6,16 @@
       </div>
       <div class="col-md-4">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-outline-primary" (click)="intern()">Interns</button>
-          <button type="button" class="btn btn-outline-primary" (click)="supervisor()">Supervisors</button>
+          <button type="button" class="btn btn-outline-primary"  (click)="intern()">Interns</button>
+          <button type="button" class="btn btn-outline-primary"  (click)="supervisor()">Supervisors</button>
         </div>
         <div>
           <br>
-          <h4>WELCOME, {{man}}</h4> 
-         <p>Don't have an account?</p>
-          <button type="button" class="btn btn-secondary" routerLink="/register">REGISTER NOW</button>  
-
+          <h4>Welcome, {{person}}</h4>         
+         <p *ngIf="person == 'Intern'">Don't have an account?</p>
+         <p *ngIf="person == 'Supervisor'">If you have an account</p>
+          <button type="button" class="btn btn-secondary" *ngIf="person == 'Intern'" routerLink="/register">REGISTER NOW</button>  
+          <button type="button" class="btn btn-secondary" *ngIf="person == 'Supervisor'" routerLink="/login">LOGIN NOW</button>  
         </div>
         </div>
       </div>

@@ -16,6 +16,7 @@ export interface User {
   residancy?: string,
   department?: string,
   residancyYear?: number,
-  token?: String
+  token?: String,
+  roleNumber:number
  
 }

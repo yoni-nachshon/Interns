@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-welcome',
@@ -6,17 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  man;
 
-  constructor() { }
+  person = "Intern" ;
+
+  constructor(private service:RegisterService) { }
 
   ngOnInit(): void {
   }
   intern(): void {
-    this.man = "Intern";
+    this.person = "Intern";
+    this.service.user.roleNumber = 10;
+    
   }
   supervisor(): void {
-    this.man = "Supervisor";
+    this.person = "Supervisor";
+    this.service.user.roleNumber = 20;
   }
 
 }

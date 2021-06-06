@@ -27,16 +27,23 @@ export class Register2Component implements OnInit {
   register(): void {   
     this.service.sendCode(this.code.toString()).subscribe(
       res => {
-        // if login go to profile
+        // if intern is login go to profile
         if(res && res.user) {
           this.user = res.user;
-          this.user.token = res.token;
-          console.log(this.user.token);
-           // save in local storage if you want to
-          this.router.navigate(["/profile"]);
-        } else{
-          this.router.navigate(["/register3"])
+          //this.user.token = res.token;
+          localStorage.setItem('token',JSON.stringify(res.token));
+          //console.log(this.user.token);
+          if(this.user.roleNumber > 10) {
+            this.router.navigate(["/list"]);            
+          }
+          else {
+            this.router.navigate(["/profile"]);
+          }                             
         }
+        else{         
+            this.router.navigate(["/register3"])
+          }         
+                   
       },
       err => this.wrong = true
     );

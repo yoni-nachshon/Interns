@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InternInfoComponent } from './components/intern-info/intern-info.component';
 import { InternInfo2Component } from './components/intern-info2/intern-info2.component';
+import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterDoneComponent } from './components/register-done/register-done.component';
@@ -13,6 +14,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
   {path:'', component: WelcomeComponent},
+  {path:'list', component: ListComponent},
   {path:'login', component: LoginComponent},
   {path:'profile', component: ProfileComponent},
   {path:'register', component: RegisterComponent},

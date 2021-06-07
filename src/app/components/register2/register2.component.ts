@@ -34,7 +34,7 @@ export class Register2Component implements OnInit {
           localStorage.setItem('token',JSON.stringify(res.token));
           //console.log(this.user.token);
           if(this.user.roleNumber > 10) {
-            this.router.navigate(["/list"]);            
+            this.router.navigate(["/user-list"]);            
           }
           else {
             this.router.navigate(["/profile"]);

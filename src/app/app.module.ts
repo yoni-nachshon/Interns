@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {WebcamModule} from 'ngx-webcam';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatIconModule} from '@angular/material/icon';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +21,7 @@ import { InternInfo2Component } from './components/intern-info2/intern-info2.com
 import { RegisterDoneComponent } from './components/register-done/register-done.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
-import { ListComponent } from './components/list/list.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,7 @@ import { ListComponent } from './components/list/list.component';
     InternInfo2Component,
     RegisterDoneComponent,
     HeaderComponent,
-    ListComponent,
+    UserListComponent,
     
   ],
   imports: [
@@ -49,9 +48,7 @@ import { ListComponent } from './components/list/list.component';
     FormsModule,
     HttpClientModule,
     WebcamModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatIconModule 
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

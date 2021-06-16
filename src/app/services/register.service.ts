@@ -19,7 +19,6 @@ export class RegisterService {
     id : "",
     passport: "",
     phone: null,
-    password:null,
     img: null,
     age: null,
     country: "",

@@ -1,23 +1,20 @@
-<div class="flex-container height">
-   
-    <table class="table table-bordered table-hover col-md-4 ">
+<div class="flex-container">
+    <table class="table table-bordered table-hover col-md-3 text-center">
         <thead>
           <tr>
             <th scope="col">N</th>
             <th scope="col">Name</th>
             <th scope="col">ID</th>
-            <th scope="col">Phone</th>
+            <th scope="col">Age</th>
           </tr>
         </thead>
         <tbody >
           <tr *ngFor="let user of users; index as i">
-            <th scope="row">{{i+1}}</th>
-            
+            <th scope="row">{{i+1}}</th>           
             <td>{{user.name}}</td>
             <td>{{user.id}}</td>
-            <td>{{user.phone}}</td>
-          </tr>
-         
+            <td>{{user.age}}</td>
+          </tr>        
         </tbody>
       </table>
     </div>

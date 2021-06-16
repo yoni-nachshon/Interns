@@ -5,7 +5,6 @@ export interface User {
   name:string, 
   passport?:string,
   phone:number,
-  password?:number,
   img?:WebcamImage,
   age?: number,
   country?: string,

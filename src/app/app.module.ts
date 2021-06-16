@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {WebcamModule} from 'ngx-webcam';
-
+import { AngularFireModule } from '@angular/fire'
+import {environment} from '../environments/environment' 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AlreadyComponent } from './components/already/already.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -22,6 +23,7 @@ import { RegisterDoneComponent } from './components/register-done/register-done.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +41,16 @@ import { UserListComponent } from './components/user-list/user-list.component';
     RegisterDoneComponent,
     HeaderComponent,
     UserListComponent,
+    UploadFormComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
+    // NgbModule,
     FormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     WebcamModule,
     BrowserAnimationsModule 
   ],

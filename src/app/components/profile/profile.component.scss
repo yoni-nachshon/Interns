@@ -1,8 +1,6 @@
-header{
-    margin: 100px;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }
 
-span {
-    content: "\2713";
-    
-  }

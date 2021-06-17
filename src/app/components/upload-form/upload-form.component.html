@@ -1,4 +1,4 @@
-<div class="container">
+<div class="upload">
 <label>
   <input
     type="file"
@@ -7,6 +7,7 @@
   />
 </label>
 
+
 <button
   class="btn btn-outline-secondary btn-sm"
   [disabled]="!selectedFiles"
@@ -14,9 +15,9 @@
 >
   Upload
 </button>
-&nbsp;
-
-
+</div>
+<hr class="col-4" style="color: gray;">
+<div class="upload">
 <div *ngIf="currentFileUpload" class="progress col-4">
   <div
     class="progress-bar progress-bar-info"

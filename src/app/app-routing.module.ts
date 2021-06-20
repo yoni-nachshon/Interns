@@ -16,7 +16,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
   {path:'', component: WelcomeComponent},
-  {path :'upload-form',component : UploadFormComponent},
+  {path :'upload',component : UploadFormComponent},
   {path:'user-list', component: UserListComponent},
   {path:'login', component: LoginComponent},
   {path:'profile', component: ProfileComponent},

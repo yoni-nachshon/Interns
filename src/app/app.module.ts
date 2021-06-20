@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { ResultsComponent } from './components/results/results.component';
+import { CardResultsComponent } from './components/card-results/card-results.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
     HeaderComponent,
     UserListComponent,
     UploadFormComponent,
+    ResultsComponent,
+    CardResultsComponent,
     
   ],
   imports: [

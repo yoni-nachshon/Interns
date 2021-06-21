@@ -10,14 +10,16 @@
           <tr *ngFor="let test of tests">
             <td  style="color: 	#808080;text-align: left;" scope="row">{{test.title}}</td>           
             <td [ngClass]="{'text-success': test.score &#62;= 80, 'text-warning': test.score &#60;= 80,
-                'text-danger': test.score &#60; 70}" colspan="2">{{test.score}}
+                'text-danger': test.score &#60; 70}" colspan="2">
+                <span class="circle">{{test.score}}</span>
             </td>
             <td><button type="button" class="btn btn-outline-secondary">See results</button></td>
           </tr>
           <tr *ngFor="let practise of practises">
             <td style="text-align: left;color: #808080;" scope="row">{{practise.title}}</td>           
             <td [ngClass]="{'text-success': practise.score &#62;= 80, 'text-warning': practise.score &#60;= 80,
-                'text-danger': practise.score &#60; 70}" colspan="2">{{practise.score}}
+                'text-danger': practise.score &#60; 70}" colspan="2">
+                <span class="circle">{{practise.score}}</span>
             </td>
             <td><button type="button" class="btn btn-outline-secondary">See results</button></td>
           </tr>                

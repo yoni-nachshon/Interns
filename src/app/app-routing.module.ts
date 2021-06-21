@@ -24,8 +24,8 @@ const routes: Routes = [
   {path:'register2', component: Register2Component},
   {path:'register3', component: Register3Component},
   {path:'register-success', component: RegisterSuccessComponent},
-  {path:'intern-info', component: InternInfoComponent},
-  {path:'intern-info2', component: InternInfo2Component},
+  {path:'info', component: InternInfoComponent},
+  {path:'info2', component: InternInfo2Component},
   {path:'register-done', component: RegisterDoneComponent},
 ];
 

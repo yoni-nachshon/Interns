@@ -23,10 +23,14 @@
           <input class="form-control" [(ngModel)]="user.department" type="text" placeholder="Department">
         </label>
       </div>
-      <div class="row my-3">
-            <label class="col-md-4 form-lebel">Year in residency <br><br><input type="range" class="range"
-               [(ngModel)]="user.residancyYear" value="3" min="0" max="5" oninput="num.value=this.value">
-               &nbsp;<span><output id="num">3</output></span>
+      <div class="row my-3">       
+            <label class="col-md-4 form-lebel">
+              Year in residency
+              <br><br>
+              <input type="range" class="slider"
+               [(ngModel)]="user.residancyYear" value="3" min="1" max="5" oninput="num.value=this.value">
+               &nbsp;
+               <span><output style="color: #808080;" id="num">3</output></span>
               </label>                                                                           
               </div>     
         <button type="button"    class="btn btn-secondary" type="submit" (click)="done()" routerLink="/register-done" >DONE!</button>

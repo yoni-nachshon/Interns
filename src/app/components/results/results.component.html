@@ -1,28 +1,24 @@
 <div class="results">
-    <table class="table table-hover col-md-4 text-center">
-        <tbody >
+    <table class="table table-hover text-center">
+        <tbody>
             <tr>
-              <td scope="col" style="text-align: left;">Your results (10)</td>
+              <td scope="col" style="text-align: left;">Your results (12)</td>
               <td scope="col"></td>
               <td scope="col"></td>
               <td scope="col">See results</td>
               </tr>
-          <tr *ngFor="let test of tests">
-            <td  style="color: 	#808080;text-align: left;" scope="row">{{test.title}}</td>           
-            <td [ngClass]="{'text-success': test.score &#62;= 80, 'text-warning': test.score &#60;= 80,
-                'text-danger': test.score &#60; 70}" colspan="2">
-                <span class="circle">{{test.score}}</span>
+              <br><br>
+          <tr *ngFor="let r of results">
+            <td  style="color: 	#808080;text-align: left;" scope="row">{{r.title}}</td>           
+            <td  scope="col"></td>
+            <td colspan="2" 
+            [ngClass]="{'text-success': r.score &#62;= 80,'text-warning': r.score &#60;= 80,
+            'text-danger': r.score &#60; 70 }">
+            <span class="circle">{{r.score}}</span>
+            &nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-outline-secondary">See results</button>
             </td>
-            <td><button type="button" class="btn btn-outline-secondary">See results</button></td>
           </tr>
-          <tr *ngFor="let practise of practises">
-            <td style="text-align: left;color: #808080;" scope="row">{{practise.title}}</td>           
-            <td [ngClass]="{'text-success': practise.score &#62;= 80, 'text-warning': practise.score &#60;= 80,
-                'text-danger': practise.score &#60; 70}" colspan="2">
-                <span class="circle">{{practise.score}}</span>
-            </td>
-            <td><button type="button" class="btn btn-outline-secondary">See results</button></td>
-          </tr>                
         </tbody>
       </table>
     </div>

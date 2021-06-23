@@ -3,12 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {WebcamModule} from 'ngx-webcam';
-import { AngularFireModule } from '@angular/fire'
-import {environment} from '../environments/environment' 
-
+import { AngularFireModule } from '@angular/fire';
+import {environment} from '../environments/environment'; 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AlreadyComponent } from './components/already/already.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -26,6 +25,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { ResultsComponent } from './components/results/results.component';
 import { CardResultsComponent } from './components/card-results/card-results.component';
+
 
 @NgModule({
   declarations: [
@@ -47,11 +47,11 @@ import { CardResultsComponent } from './components/card-results/card-results.com
     ResultsComponent,
     CardResultsComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NgbModule,
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

@@ -5,6 +5,7 @@ import { InternInfo2Component } from './components/intern-info2/intern-info2.com
 
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
 import { RegisterDoneComponent } from './components/register-done/register-done.component';
 import { RegisterSuccessComponent } from './components/register-success/register-success.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'info', component: InternInfoComponent},
   {path:'info2', component: InternInfo2Component},
   {path:'register-done', component: RegisterDoneComponent},
+  
 ];
 
 @NgModule({

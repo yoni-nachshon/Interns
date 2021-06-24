@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">Your results (12)</div>
     <div class="col"></div>
-    <div class="col">See results</div>
+    <div class="col" style="text-align: right;margin-right: 30px;">See results</div>
   </div>
     <table class="table table-hover text-center">
         <tbody>
@@ -11,7 +11,7 @@
           <tr *ngFor="let r of results">
             <td  style="color: 	#808080;text-align: left;" scope="row">{{r.title}}</td>           
             <td  scope="col"></td>
-            <td colspan="2" 
+            <td colspan="2" style="text-align: right;" 
             [ngClass]="{'text-success': r.score &#62;= 80,'text-warning': r.score &#60;= 80,
             'text-danger': r.score &#60; 70 }">
             <span class="circle">{{r.score}}</span>

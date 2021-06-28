@@ -6,6 +6,8 @@ export interface User {
   passport?:string,
   phone:number,
   img?:WebcamImage,
+  token?: String,
+  roleNumber:number
   age?: number,
   country?: string,
   city?: string,
@@ -15,7 +17,5 @@ export interface User {
   residancy?: string,
   department?: string,
   residancyYear?: number,
-  token?: String,
-  roleNumber:number
  
 }

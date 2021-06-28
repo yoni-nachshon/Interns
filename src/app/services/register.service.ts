@@ -11,12 +11,12 @@ import { code } from './code.class';
 })
 export class RegisterService {
   baseURL = 'http://localhost:5000/';
-  password = 1234;
+  // password = 1234;
   code = new code();
 
   user : User = {
-    name: "",
     id : "",
+    name: "",
     passport: "",
     phone: null,
     img: null,

@@ -21,7 +21,7 @@ export class InternInfoComponent implements OnInit {
   }
   add(){
     this.service.user = this.user;
-    this.router.navigate(['/intern-info2'])
+    this.router.navigate(['/info2'])
   }
 
 }

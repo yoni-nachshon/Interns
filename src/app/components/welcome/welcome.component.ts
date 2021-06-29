@@ -8,20 +8,24 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  person = "Intern" ;
+  person = '';
+  text = '';
 
   constructor(private service:RegisterService) { }
 
   ngOnInit(): void {
   }
   intern(): void {
-    this.person = "Intern";
+    this.person = "Welcome Intern!";
+    this.text = "Don't have an account?";
     this.service.user.roleNumber = 10;
     
   }
   supervisor(): void {
-    this.person = "Supervisor";
+    this.person = "Welcome Supervisor!";
+    this.text = "If you have an account";
     this.service.user.roleNumber = 20;
   }
+  
 
 }

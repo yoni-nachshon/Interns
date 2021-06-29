@@ -12,7 +12,7 @@
             <td  style="color: 	#808080;text-align: left;" scope="row">{{r.title}}</td>           
             <td  scope="col"></td>
             <td colspan="2" style="text-align: right;" 
-            [ngClass]="{'text-success': r.score &#62;= 80,'text-warning': r.score &#60;= 80,
+            [ngClass]="{'text-success': r.score &gt;= 80,'text-warning': r.score &lt;= 80,
             'text-danger': r.score &#60; 70 }">
             <span class="circle">{{r.score}}</span>
             &nbsp;&nbsp;&nbsp;

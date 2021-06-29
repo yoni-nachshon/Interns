@@ -1,24 +1,23 @@
 <app-already></app-already>
 <div class="container">
-<div class="row d-flex justify-content-center align-items-center">
+<div class="row d-flex justify-content-center">
       <div class="col-md-4">
-        <img src="assets/intern.jpg" style="height: 350; width: 300;">
+        <img src="assets/intern.jpg">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" style="margin-top: 7rem;">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
           <button type="button" class="btn btn-outline-primary"  (click)="intern()">Interns</button>
           <button type="button" class="btn btn-outline-primary"  (click)="supervisor()">Supervisors</button>
         </div>
-        <div>
-          <br>
-          <h4>Welcome, {{person}}</h4>         
-         <p *ngIf="person == 'Intern'">Don't have an account?</p>
-         <p *ngIf="person == 'Supervisor'">If you have an account</p>
-          <button type="button" class="btn btn-secondary" *ngIf="person == 'Intern'" routerLink="/register">REGISTER NOW</button>  
-          <button type="button" class="btn btn-secondary" *ngIf="person == 'Supervisor'" routerLink="/login">LOGIN NOW</button>  
+        <div style="margin-top: 2rem;">
+          <h5>{{person}}</h5>         
+         <p *ngIf="person == 'Welcome Intern!'">{{text}}</p>
+         <p *ngIf="person == 'Welcome Supervisor!'">{{text}}</p>
+          <button type="button" class="btn btn-outline-primary" *ngIf="person == 'Welcome Intern!'" routerLink="/register">REGISTER NOW</button>  
+          <button type="button" class="btn btn-outline-primary" *ngIf="person == 'Welcome Supervisor!'" routerLink="/login">LOGIN NOW</button>  
         </div>
         </div>
       </div>
     </div>
-    
+
     

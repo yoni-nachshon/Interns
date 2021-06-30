@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { FileUpload } from '../models/file-upload';
@@ -8,7 +10,9 @@ import { FileUpload } from '../models/file-upload';
   providedIn: 'root'
 })
 export class FileUploadService {
+
   private basePath = '/uploads';
+  
   
 
   constructor(private storage: AngularFireStorage) { }
@@ -22,12 +26,15 @@ export class FileUploadService {
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
           fileUpload.url = downloadURL;
-          fileUpload.name = fileUpload.file.name;         
+          fileUpload.name = fileUpload.file.name;
+          
+                   
         });
       })
     ).subscribe();
 
     return uploadTask.percentageChanges();
   }
+  
 
 }

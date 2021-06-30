@@ -1,34 +1,29 @@
-<div class="upload">
-<label>
-  <input
-    type="file"
-    class="text-nowrap text-truncate"
-    (change)="selectFile($event)"
-  />
-</label>
-
-
-<button
-  class="btn btn-outline-secondary btn-sm"
-  [disabled]="!selectedFiles"
-  (click)="upload()"
->
-  Upload
-</button>
-</div>
-<hr class="col-4" style="color: gray;">
-<div class="upload">
-<div *ngIf="currentFileUpload" class="progress col-4">
-  <div
-    class="progress-bar progress-bar-info"
-    role="progressbar"
-    attr.aria-valuenow="{{ percentage }}"
-    aria-valuemin="0"
-    aria-valuemax="100"
-    [ngStyle]="{ width: percentage + '%' }"
-  >
-    {{ percentage }}%
+<div class="container">
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-4">
+      <div class="btn-group border" role="group" aria-label="Basic outlined example">
+      <input type="file" class="text-nowrap text-truncate" (change)="selectFile($event)"/>
+      <button type="button" class="btn btn-secondary btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+        Upload
+      </button>
+    </div>
+    </div>
   </div>
-</div>
-</div>
+  <div class="row d-flex justify-content-center mt-3">
+    <div class="col-md-4 ml-3">
+<div *ngIf="currentFileUpload" class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage}}"
+      aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: percentage + '%'}">
+    {{ percentage }}%
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+ 
+
+
+
+
 

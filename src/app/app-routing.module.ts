@@ -12,12 +12,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { Register2Component } from './components/register2/register2.component';
 import { Register3Component } from './components/register3/register3.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { UploadListComponent } from './components/upload-list/upload-list.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
   {path:'', component: WelcomeComponent},
   {path :'upload',component : UploadFormComponent},
+  {path :'upload-list',component : UploadListComponent},
   {path:'user-list', component: UserListComponent},
   {path:'login', component: LoginComponent},
   {path:'profile', component: ProfileComponent},

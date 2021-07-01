@@ -25,7 +25,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { ResultsComponent } from './components/results/results.component';
 import { CardResultsComponent } from './components/card-results/card-results.component';
-import { UploadListComponent } from './components/upload-list/upload-list.component';
+
+
 
 
 @NgModule({
@@ -46,10 +47,8 @@ import { UploadListComponent } from './components/upload-list/upload-list.compon
     UserListComponent,
     UploadFormComponent,
     ResultsComponent,
-    CardResultsComponent,
-    UploadListComponent,
-    
-    
+    CardResultsComponent
+      
   ],
   imports: [
     BrowserModule,

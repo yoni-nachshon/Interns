@@ -2,8 +2,8 @@
   <div class="row d-flex justify-content-center mt-5">
     <div class="col-md-4">
       <div class="btn-group border" role="group" aria-label="Basic outlined example">
-      <input type="file" class="text-nowrap text-truncate" (change)="selectFile($event)"/>
-      <button type="button" class="btn btn-secondary btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+      <input type="file" (change)="selectFile($event)"/>
+      <button type="button" class="btn btn-outline-secondary btn-sm" [disabled]="!selectedFiles" (click)="upload()">
         Upload
       </button>
     </div>
@@ -12,7 +12,7 @@
   <div class="row d-flex justify-content-center mt-3">
     <div class="col-md-4 ml-3">
 <div *ngIf="currentFileUpload" class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage}}"
+  <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="{{percentage}}"
       aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: percentage + '%'}">
     {{ percentage }}%
     </div>

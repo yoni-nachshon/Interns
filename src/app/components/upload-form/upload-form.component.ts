@@ -13,7 +13,7 @@ export class UploadFormComponent implements OnInit {
   percentage = 0;
 
   constructor(private uploadService: FileUploadService) { }
-
+  
   ngOnInit(): void {
   }
   selectFile(event: any): void {

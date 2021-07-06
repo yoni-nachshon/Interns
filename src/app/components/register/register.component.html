@@ -1,57 +1,49 @@
 <app-already></app-already>
 <br>
 <div class="container">
-<div class="row">
-<div class="col-12">
-<h1>Welcome, Intern</h1>
-<br>
-<p>please fill in the following fields to create an account</p>
-</div>
-</div>
-<form #form="ngForm">
-<div class="row my-3">
-    <label class="form-label col-4">
-      Full name
-      <input  type="text"   placeholder="Full name" [(ngModel)]="user.name" name="name" required #fn="ngModel"
-      [ngClass]="{'form-control':true,'is-invalid': !fn.valid && fn.touched, 'is-valid': fn.valid && fn.touched}">
-      <div class="valid-feedback">Looks good!</div>
-      <div class="invalid-feedback">This field is required</div>
-      
-    </label> 
-    <label  class="form-label col-4">
-      ID number
-      <input [(ngModel)]="user.id" class="form-control" type="text" placeholder="ID number" name="idn" required #idn="ngModel"
-      [ngClass]="{'form-control':true,'is-invalid': !idn.valid && idn.dirty, 'is-valid': idn.valid && idn.dirty}">
-      <div class="valid-feedback">Looks good!</div>
-      <div class="invalid-feedback">This field is required</div>
-    </label>   
-    <label class="form-label col-4">
-      Passport/Citizenship
-      <input class="form-control" [(ngModel)]="user.passport" type="text" placeholder="Passport/Citizenship" name="pass" required #pass="ngModel"
-      [ngClass]="{'form-control':true,'is-invalid': !pass.valid && pass.dirty, 'is-valid': pass.valid && pass.dirty}">
-      <div class="valid-feedback">Looks good!</div>
-      <div class="invalid-feedback">This field is required</div>
-    </label>
-  </div>
-  <div class="row my-3">
-    <label class="form-label col-4">
-      Phone number
-      <input class="form-control" [(ngModel)]="user.phone" type="tel" placeholder="972 - PhoneNumber" name="pn" required #pn="ngModel"
-      [ngClass]="{'form-control':true,'is-invalid': !pn.valid && pn.dirty, 'is-valid': pn.valid && pn.dirty}">
-      <div class="valid-feedback">Looks good!</div>
-      <div class="invalid-feedback">This field is required</div>
+  <div class="row">
+    <div class="col-12">
+      <h1>Welcome, Intern</h1>
       <br>
-      <div><small>A verification code will by sent to you to this number</small></div>
-    </label>
-   
-  </div>      
-    <button type="button" [disabled]="form.invalid"   class="btn btn-secondary" type="submit" routerLink="/register2" (click)='register()'>CONTINUE</button>
-  </form> 
+      <p>please fill in the following fields to create an account</p>
+    </div>
   </div>
-    
+  <form #form="ngForm">
+    <div class="row my-3">
+      <label class="form-label col-md-4">
+        Full name
+        <input type="text" placeholder="Full name" [(ngModel)]="user.name" name="name" required #fn="ngModel"
+          [ngClass]="{'form-control':true,'is-invalid': !fn.valid && (fn.dirty || fn.touched), 'is-valid': fn.valid && (fn.dirty || fn.touched)}">
+        <div class="invalid-feedback">This field is required</div>
+      </label>
+      <label class="form-label col-md-4">
+        ID number
+        <input [(ngModel)]="user.id" class="form-control" type="text" placeholder="ID number" name="idn" required
+          #idn="ngModel"
+          [ngClass]="{'form-control':true,'is-invalid': !idn.valid && (idn.dirty || idn.touched), 'is-valid': idn.valid && (idn.dirty || idn.touched)}">
+        <div class="invalid-feedback">This field is required</div>
+      </label>
+      <label class="form-label col-md-4">
+        Passport/Citizenship
+        <input class="form-control" [(ngModel)]="user.passport" type="text" placeholder="Passport/Citizenship"
+          name="pass" required #pass="ngModel"
+          [ngClass]="{'form-control':true,'is-invalid': !pass.valid && (pass.dirty || pass.touched), 'is-valid': pass.valid && (pass.dirty || pass.touched)}">
+        <div class="invalid-feedback">This field is required</div>
+      </label>
+    </div>
+    <div class="row my-3">
+      <label class="form-label col-md-4">
+        Phone number
+        <input class="form-control" [(ngModel)]="user.phone" type="tel" placeholder="972 - PhoneNumber" name="pn"
+          required #pn="ngModel"
+          [ngClass]="{'form-control':true,'is-invalid': !pn.valid && (pn.dirty || pn.touched), 'is-valid': pn.valid && (pn.dirty || pn.touched)}">
+        <div class="invalid-feedback">This field is required</div>
+        <br>
+        <div><small>A verification code will by sent to you to this number</small></div>
+      </label>
 
-        
-    
-
-
-    
+    </div>
+    <button type="button" [disabled]="form.invalid" class="btn btn-secondary" type="submit" routerLink="/register2"
+      (click)='register()'>CONTINUE</button>
+  </form>
+</div>

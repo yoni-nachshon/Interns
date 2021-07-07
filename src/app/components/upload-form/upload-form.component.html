@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row d-flex justify-content-center mt-5">
+  <div class="row justify-content-center" style="margin-top: 5rem;">
     <div class="col-md-4">
       <div class="btn-group border" role="group" aria-label="Basic outlined example">
       <input type="file" (change)="selectFile($event)"/>
@@ -9,7 +9,7 @@
     </div>
     </div>
   </div>
-  <div class="row d-flex justify-content-center mt-3">
+  <div class="row justify-content-center mt-3">
     <div class="col-md-4 ml-3">
 <div *ngIf="currentFileUpload" class="progress">
   <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="{{percentage}}"

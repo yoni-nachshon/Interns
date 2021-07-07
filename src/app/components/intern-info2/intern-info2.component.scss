@@ -1,8 +1,12 @@
-.slider{
-  
+.container {
+  box-shadow: 0px 10px 30px 0px;
+  padding: 30px;
+  width: 50rem;
+}
+.slider{ 
   -webkit-appearance: none;  
   appearance: none;
-  width: 92%; 
+  width: 90%; 
   height: 5px; 
   background: #d3d3d3; 
   outline: none; 
@@ -20,6 +24,8 @@
   background: #d3d3d3; 
   cursor: pointer;
 }
+
+
 
 
   

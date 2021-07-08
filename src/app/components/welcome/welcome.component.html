@@ -1,23 +1,25 @@
 <app-already></app-already>
 <div class="container">
-<div class="row d-flex justify-content-center">
-      <div class="col-md-4">
-        <img src="assets/intern.jpg">
-      </div>
-      <div class="col-md-4" style="margin-top: 7rem;">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <img src="assets/intern.jpg">
+    </div>
+    <div class="col-md-4" style="margin-top: 7rem;">
+      <div class="box">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-outline-primary"  (click)="intern()">Interns</button>
-          <button type="button" class="btn btn-outline-primary"  (click)="supervisor()">Supervisors</button>
+          <button type="button" class="btn btn-outline-dark" (click)="intern()">Interns</button>
+          <button type="button" class="btn btn-outline-dark" (click)="supervisor()">Supervisors</button>
         </div>
-        <div style="margin-top: 2rem;">
-          <h5>{{person}}</h5>         
-         <p *ngIf="person == 'Welcome Intern!'">{{text}}</p>
-         <p *ngIf="person == 'Welcome Supervisor!'">{{text}}</p>
-          <button type="button" class="btn btn-outline-primary" *ngIf="person == 'Welcome Intern!'" routerLink="/register">REGISTER NOW</button>  
-          <button type="button" class="btn btn-outline-primary" *ngIf="person == 'Welcome Supervisor!'" routerLink="/login">LOGIN NOW</button>  
-        </div>
+        <div class="o" style="margin-top: 2rem;">
+          <h5>{{person}}</h5>
+          <p *ngIf="person == 'Welcome Intern!'">{{text}}</p>
+          <p *ngIf="person == 'Welcome Supervisor!'">{{text}}</p>
+          <button style="margin-left: 1rem;" type="button" class="btn btn-outline-dark"
+            *ngIf="person == 'Welcome Intern!'" routerLink="/register">REGISTER NOW</button>
+          <button style="margin-left: 1rem;" type="button" class="btn btn-outline-dark"
+            *ngIf="person == 'Welcome Supervisor!'" routerLink="/login">LOGIN NOW</button>
         </div>
       </div>
     </div>
-    
-    
+  </div>
+</div>

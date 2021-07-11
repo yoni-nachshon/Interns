@@ -25,7 +25,6 @@ export class WelcomeComponent implements OnInit {
     this.person = "Welcome Supervisor!";
     this.text = "If you have an account";
     this.service.user.roleNumber = 20;
-  }
-  
+  }  
 
 }

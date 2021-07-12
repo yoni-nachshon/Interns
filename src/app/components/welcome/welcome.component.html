@@ -2,21 +2,28 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="card box">
-      <h3 class="border bg-secondary text-center">Welcome to the App</h3>
+      <h2 class="text-white bg-secondary text-center">Welcome to the App</h2>
       <img src="assets/intern.jpg">
-      <div class="btn-group" style="width: 100%; margin-top: 1rem;">
-        <button type="button" class="btn btn-secondary" (click)="intern()">Intern</button> &nbsp;
-        <button type="button" class="btn btn-secondary" (click)="supervisor()">Supervisor</button>
-        
+      <div class="btn-group">
+        <button (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"
+          type="button" class="btn btn-secondary" (click)="intern()">Intern</button> &nbsp;
+        <button (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"
+          type="button" class="btn btn-secondary" (click)="supervisor()">Supervisor</button>
       </div>
-      <div class="content">
-        <h5>{{person}}</h5>
-        <p *ngIf="person == 'Welcome Intern!'">{{text}}</p>
-        <p *ngIf="person == 'Welcome Supervisor!'">{{text}}</p>
-        <button type="button" class="btn btn-outline-dark" *ngIf="person == 'Welcome Intern!'"
-          routerLink="/register">REGISTER NOW</button>
-        <button type="button" class="btn btn-outline-dark" *ngIf="person == 'Welcome Supervisor!'"
-          routerLink="/login">LOGIN NOW</button>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+        <div class="card text-secondary text-center mt-2">
+          <div class="card-body">
+            
+              <h5>{{person}}</h5>
+              <p *ngIf="person == 'Welcome Intern!'">{{text}}</p>
+              <p *ngIf="person == 'Welcome Supervisor!'">{{text}}</p>
+              <button type="button" class="btn btn-outline-secondary btn-sm" *ngIf="person == 'Welcome Intern!'"
+                routerLink="/register">REGISTER NOW</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm" *ngIf="person == 'Welcome Supervisor!'"
+                routerLink="/login">LOGIN NOW</button>
+           
+          </div>
+        </div>
       </div>
     </div>
   </div>

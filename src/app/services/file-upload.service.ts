@@ -13,8 +13,6 @@ export class FileUploadService {
 
   private basePath = '/uploads';
   
-  
-
   constructor(private storage: AngularFireStorage) { }
 
   pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined> {
@@ -26,9 +24,7 @@ export class FileUploadService {
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
           fileUpload.url = downloadURL;
-          fileUpload.name = fileUpload.file.name;
-          
-                   
+          fileUpload.name = fileUpload.file.name;                 
         });
       })
     ).subscribe();
@@ -36,5 +32,4 @@ export class FileUploadService {
     return uploadTask.percentageChanges();
   }
   
-
 }

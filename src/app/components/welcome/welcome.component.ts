@@ -11,6 +11,8 @@ export class WelcomeComponent implements OnInit {
   person = '';
   text = '';
 
+  public isCollapsed = true;
+
   constructor(private service:RegisterService) { }
 
   ngOnInit(): void {

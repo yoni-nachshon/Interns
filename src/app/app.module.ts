@@ -6,6 +6,7 @@ import {WebcamModule} from 'ngx-webcam';
 import { AngularFireModule } from '@angular/fire';
 import {environment} from '../environments/environment'; 
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -57,7 +58,9 @@ import { CardResultsComponent } from './components/card-results/card-results.com
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     WebcamModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    NgbModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

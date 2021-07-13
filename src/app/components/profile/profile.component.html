@@ -3,28 +3,23 @@
   <p>Soroka Academic Hospital</p> 
 </div>
       <br><br>
+
+      <!-- Demo profile -->
+
       <div class="container">
         <div class="row">
           <div class="col-md-3 border">
+
+            <!-- // No webcam
+            <img *ngIf="user.img" [src]="user.img.imageAsDataUrl" height="50px" style="border-radius: 50%;">
+             <p style="text-align: center;margin-top: 1rem;">{{user.name}}</p> --> 
+                       
             <img src="assets/person.png" style="padding-left: 5rem; margin-top: 3rem;">
             <p style="text-align: center;margin-top: 1rem;">User-Name</p>
             <p style="text-align: center; color: 	#808080;">
               <small> Soroka Academic Hospital <br>  2 years surgery intern</small>
             </p>
-            <p style="text-align: center; margin-top: 4rem;">
-              <small>Your progress</small>
-            </p>
-            <div class="chart">
-              <div class="bar-45"></div>
-              <div class="bar-88"></div>
-              <div class="bar-55"></div>
-              <div class="bar-70"></div>
-              <div class="bar-46"></div>
-              <div class="bar-94"></div>
-            </div>          
-            <div style="text-align: center; margin-top: 2rem;">
-              <button class="btn btn-sm btn-outline-secondary" routerLink="/">Home</button>
-            </div>                                  
+            <app-progress></app-progress>                                                      
           </div>
           <div class="col-md-5 border">
             <br>

@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { FileUpload } from '../models/file-upload';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class FileUploadService {
 
   private basePath = '/uploads';
   
-  constructor(private storage: AngularFireStorage) { }
+  constructor(private storage: AngularFireStorage, private http: HttpClient) { }
 
   pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
@@ -31,5 +32,6 @@ export class FileUploadService {
 
     return uploadTask.percentageChanges();
   }
+  
   
 }

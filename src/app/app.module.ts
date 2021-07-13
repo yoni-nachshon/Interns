@@ -26,6 +26,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { ResultsComponent } from './components/results/results.component';
 import { CardResultsComponent } from './components/card-results/card-results.component';
+import { ProgressComponent } from './components/progress/progress.component';
 
 
 
@@ -48,7 +49,8 @@ import { CardResultsComponent } from './components/card-results/card-results.com
     UserListComponent,
     UploadFormComponent,
     ResultsComponent,
-    CardResultsComponent
+    CardResultsComponent,
+    ProgressComponent
       
   ],
   imports: [

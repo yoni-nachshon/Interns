@@ -10,6 +10,9 @@
  li {
    margin-top: 0.8rem;
  }
+ .x_axis {
+   margin-left: 4rem;
+ }
  
  .chart {
    display: grid;
@@ -24,7 +27,7 @@
  }
  
  [class*="bar"] {
-   border-radius: 5px 5px 0 0;
+   border-radius: 4px 4px 0 0;
    grid-row-start: 1;
    grid-row-end: 101;
  }
